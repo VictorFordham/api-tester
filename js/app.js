@@ -113,6 +113,6 @@ const putEndpointRequest = () => {
     makeRequest("PUT");
 };
 
-const deleteEndpointRequest = async() => {
+const deleteEndpointRequest = () => {
     makeRequest("DELETE");
 };
