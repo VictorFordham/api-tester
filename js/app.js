@@ -30,7 +30,7 @@ window.onload = async () => {
             //process the login state
             await auth0.handleRedirectCallback();
             updateUI();
-            window.history.replaceState({}, document.title, "/");
+            window.history.replaceState({}, document.title, "/api-tester/");
         }
     }
 };
