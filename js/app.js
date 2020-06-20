@@ -9,7 +9,8 @@ const configureClient = async () => {
     auth0 = await createAuth0Client({
         domain: config.domain,
         audience: config.audience,
-        client_id: config.clientId
+        client_id: config.clientId,
+        redirect_uri: window.location.href
     });
 };
 
@@ -64,13 +65,13 @@ const updateUI = async () => {
 
 const login = async () => {
     await auth0.loginWithRedirect({
-        redirect_uri: "https://victorfordham.github.io/api-tester/"
+        redirect_uri: window.location.href
     });
 };
 
 const logout = () => {
     auth0.logout({
-        returnTo: "https://victorfordham.github.io/api-tester/" //returns user to where they were, can change later
+        returnTo: window.location.href //returns user to where they were, can change later
     });
 };
 
