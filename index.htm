@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>test</title>
+        <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    </head>
+
+    <body>
+
+        <header>
+            <div class="hidden" id="gated-content">
+                <label>
+                    Access token:
+                    <pre id="ipt-access-token"></pre>
+                </label>
+                <label>
+                    User profile:
+                    <pre id="ipt-user-profile"></pre>
+                </label>
+
+                <!--<img src="" id="profile-pic" />-->
+
+                <input type="text" placeholder="domain" id="domain" />
+                <input type="text" placeholder="endpoint" id="endpoint" />
+                <br />
+                <textarea rows="1" cols="50" placeholder="url parameters" id="parameters"></textarea>
+                <br />
+                <textarea rows="10" cols="50" placeholder="payload" id="payload"></textarea>
+                <br />
+                <textarea rows="10" cols="50" placeholder="output" id="output"></textarea>
+                <br /><br />
+
+                <button type="button" onclick=getEndpointRequest()>GET</button>
+                <button type="button" onclick=postEndpointRequest()>POST</button>
+                <button type="button" onclick=putEndpointRequest()>PUT</button>
+                <button type="button" onclick=deleteEndpointRequest()>DELETE</button>
+            </div>
+        </header>
+
+        <button id="btn-login" disabled="true" onclick="login()">Log in</button>
+        <button id="btn-logout" disabled="true" onclick="logout()">Log out</button>
+
+        <script src="https://cdn.auth0.com/js/auth0-spa-js/1.7/auth0-spa-js.production.js"></script>
+        <script src="/js/app.js"></script>
+    </body>
+</html>
