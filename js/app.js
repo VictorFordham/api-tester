@@ -64,13 +64,13 @@ const updateUI = async () => {
 
 const login = async () => {
     await auth0.loginWithRedirect({
-        redirect_uri: window.location.origin
+        redirect_uri: "https://victorfordham.github.io/api-tester/"
     });
 };
 
 const logout = () => {
     auth0.logout({
-        returnTo: window.location.origin //returns user to where they were, can change later
+        returnTo: "https://victorfordham.github.io/api-tester/" //returns user to where they were, can change later
     });
 };
 
