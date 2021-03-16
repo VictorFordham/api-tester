@@ -10,7 +10,8 @@ const configureClient = async () => {
         domain: config.domain,
         audience: config.audience,
         client_id: config.clientId,
-        redirect_uri: window.location.href
+        redirect_uri: window.location.href,
+        cacheLocation: "localstorage"
     });
 };
 
@@ -18,7 +19,7 @@ const configureClient = async () => {
 window.onload = async () => {
     await configureClient();
     updateUI();
-
+    console.log(window.location.search);
     const isAuthenticated = await auth0.isAuthenticated();
 
     if (isAuthenticated) {
