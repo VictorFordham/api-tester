@@ -19,7 +19,7 @@ const configureClient = async () => {
 window.onload = async () => {
     await configureClient();
     updateUI();
-    console.log(window.location.search);
+    document.getElementById("request_parameters").value = window.location.search;
     const isAuthenticated = await auth0.isAuthenticated();
 
     if (isAuthenticated) {
